@@ -376,6 +376,9 @@
     // it, but we need to make sure we respect a preference not to show it
     shouldShow = (options.show === undefined) ? true : options.show;
 
+    // add message to form
+    if (options.message) form.append('<p>' + options.message + '</p>');
+
     /**
      * overrides; undo anything the user tried to set they shouldn't have
      */
@@ -536,11 +539,6 @@
     if (options.maxlength) {
       input.attr("maxlength", options.maxlength);
     }
-
-
-
-    // add message
-    if (options.message) form.append('<p>' + options.message + '</p>');
 
     // now place input in our form
     form.append(input);
